@@ -1,0 +1,84 @@
+Real-data arm, component comparison (A): PENS against PENS without the edit (purity=1, s_min=1), without completion (completion=None), both tuned by inner CV and the trade-off rule like PENS, and against class-wise farthest-point selection at the per-class sizes PENS selected.
+
+T-A1 (tuned). Means over datasets of the per-dataset means over 5 outer folds; balanced accuracy, reduction and effectiveness in %, fit time in seconds. Removing the edit also changes the radius, since eps = eps_scale x median merge height of K and K is then the whole training part. Fit times are comparable with results/summary.txt only if run_components.py ran on the machine of the reported run_real.py runs (the Mac Mini).
+
+All (18)
+Method                           Bal. acc. Reduction   Effect.  Time (s)
+PENS                                  80.1      87.1      69.7      0.18
+PENS without edit                     80.6      86.0      69.0      0.71
+PENS without completion               76.5      85.8      65.1      0.48
+Farthest-point (size-matched)         75.3      87.1      65.4      0.04
+Full training set                     79.8       0.0       0.0      0.00
+Random (matched)                      71.7      87.1      62.2      0.00
+SPOTgreedy (matched)                  79.0      87.1      68.7      3.52
+
+Imbalanced (5)
+Method                           Bal. acc. Reduction   Effect.  Time (s)
+PENS                                  67.1      90.7      61.4      0.06
+PENS without edit                     67.5      92.8      63.3      0.24
+PENS without completion               64.6      91.1      59.2      0.23
+Farthest-point (size-matched)         60.0      90.7      54.9      0.02
+Full training set                     65.8       0.0       0.0      0.00
+Random (matched)                      60.5      90.7      54.9      0.00
+SPOTgreedy (matched)                  66.9      90.7      61.3      1.50
+
+Wilcoxon signed-rank (two-sided), PENS vs each variant over N = 18 datasets, Holm-corrected over the three variants within each metric; alpha = 0.05. Differences are PENS minus variant (in points; in seconds for fit time, where a negative difference means PENS is faster); W-T-L counts the datasets on which PENS is better, tied and worse.
+
+Balanced accuracy
+Variant                          Mean diff.     W-T-L         p    Holm p
+PENS without edit                     -0.43    7-0-11    0.3692    0.3692
+PENS without completion               +3.65    14-0-4    0.0104    0.0208 *
+Farthest-point (size-matched)         +4.88    16-0-2    0.0000    0.0001 *
+
+Reduction
+Variant                          Mean diff.     W-T-L         p    Holm p
+PENS without edit                     +1.10     9-0-9    0.4171    1.0000
+PENS without completion               +1.32    8-0-10    0.6095    1.0000
+Farthest-point (size-matched)         +0.00    1-17-0    1.0000    1.0000
+
+Effectiveness
+Variant                          Mean diff.     W-T-L         p    Holm p
+PENS without edit                     +0.69    10-0-8    0.7660    0.7660
+PENS without completion               +4.58    14-0-4    0.0028    0.0056 *
+Farthest-point (size-matched)         +4.27    16-0-2    0.0000    0.0001 *
+
+Fit time
+Variant                          Mean diff.     W-T-L         p    Holm p
+PENS without edit                     -0.53    18-0-0    0.0000    0.0000 *
+PENS without completion               -0.31    18-0-0    0.0000    0.0000 *
+Farthest-point (size-matched)         +0.14    0-0-18    0.0000    0.0000 *
+
+* Holm-adjusted p < 0.05
+
+T-A2 (same setting). noedit and nocomp at the eps_scale (and, for noedit, the completion) that PENS selected on the fold; same averaging as T-A1, plus the mean kept share |K| / n_train in % and the mean number of prototypes.
+
+All (18)
+Method                           Bal. acc. Reduction   Effect.  Time (s)  Kept (%)    Protos
+PENS                                  80.1      87.1      69.7      0.18      93.8     273.0
+PENS without edit                     79.9      85.5      68.3      0.68     100.0     298.7
+PENS without completion               72.7      92.1      66.5      0.48      93.8     199.3
+
+Imbalanced (5)
+Method                           Bal. acc. Reduction   Effect.  Time (s)  Kept (%)    Protos
+PENS                                  67.1      90.7      61.4      0.06      90.0     117.4
+PENS without edit                     65.6      88.7      59.2      0.30     100.0     142.2
+PENS without completion               63.1      94.0      59.2      0.19      90.0      79.3
+
+Configurations chosen by the trade-off rule (of 90 folds): eps_scale by variant, then completion.
+
+method     PENS  PENS without edit  PENS without completion
+eps_scale                                                  
+1.0           2                  4                        6
+2.0          23                 18                       33
+4.0          27                 29                       30
+8.0          15                 20                        9
+16.0         23                 19                       12
+
+method      PENS  PENS without edit
+completion                         
+gain          61                 63
+consistent    29                 27
+
+Refit check. The PENS refit at the configuration selected in real.csv reproduces n_selected on 90 of 90 folds. No fold differs.
+Training parts with exact ties (duplicate rows or repeated pairwise distances) occur in 10 datasets (bupa, ecoli, ionosphere, new_thyroid, page_blocks, phoneme, segmentation, texture, wine_quality_red, yeast); 0 of them are affected by a mismatch, and 0 datasets without exact ties are.
+

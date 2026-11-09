@@ -1,0 +1,12 @@
+Figure 1: sklearn.datasets.make_moons(n_samples=240, noise=0.15, random_state=1), 19 labels flipped at numpy.random.default_rng(1).choice(240, 19, replace=False); PENS(eps_scale=4) with its other defaults. Values checked against the caption.
+
+accepted nodes: 29 (25 by purity, 4 by size only)
+removed points: 19, of which 16 flipped
+|K_0| = 109, |K_1| = 112
+|Q_0| = 18, |Q_1| = 15
+eps = 0.3351
+|P_0| = 23, |P_1| = 18
+flipped points surviving the edit: 3
+  row 7: label 1 (flipped from 0), at (0.78, 0.76), core
+  row 72: label 0 (flipped from 1), at (1.06, -0.59), core
+  row 169: label 1 (flipped from 0), at (0.92, 0.55), completion

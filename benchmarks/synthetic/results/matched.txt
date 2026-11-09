@@ -1,0 +1,483 @@
+Matched-size topology comparison on the synthetic suite: PENS (eps_scale in {1, 4, 16}, consistent and gain completion) against a farthest-point net, SPOTgreedy and random selection (mean of 5 draws) at the same per-class sizes, on every generator and seeds 0-4. d_B is the bottleneck distance between the diagram of the class-c selection and the diagram of X_c; degree 2 only for classes with beta2 > 0. Medians are over seeds, eps_scale, completions and classes unless stated.
+
+Per generator: median d_B to X_c by degree and method, and the mean balanced accuracy of 1-NN on the full selection on a fresh clean draw of the generator (%).
+
+Degree 0 (dB0_SX)
+method             PENS  Farthest-point  SPOTgreedy  Random
+gen                                                        
+two_circles      0.1372          0.1372      0.1499  0.3137
+circle_vs_disk   0.1434          0.1427      0.1282  0.1850
+two_moons        0.1281          0.1431      0.0922  0.1428
+crossing_circles 0.1227          0.1207      0.1061  0.2025
+torus_blob       0.4982          0.5136      0.1648  0.2376
+circles_r10      0.4583          0.4583      0.4222  0.6458
+gauss_d2         0.2727          0.2953      0.2970  0.4389
+gauss_d5         0.9177          0.9651      0.6444  0.6920
+gauss_d10        1.2349          1.2389      1.2349  1.2358
+gauss_d20        2.1172          2.1172      2.1172  2.1172
+sphere_blob      0.2753          0.2982      0.1237  0.1705
+two_spheres      0.4624          0.4624      0.4662  0.5465
+two_circles_D10  0.2469          0.2469      0.2774  0.5407
+two_circles_D50  0.4689          0.4689      0.4930  0.6665
+two_circles_D100 0.7304          0.7361      0.6628  0.7270
+sphere_blob_D10  0.3045          0.3312      0.1282  0.1752
+sphere_blob_D50  0.2680          0.3551      0.1505  0.2033
+sphere_blob_D100 0.2340          0.2956      0.2065  0.2120
+
+Degree 1 (dB1_SX)
+method             PENS  Farthest-point  SPOTgreedy  Random
+gen                                                        
+two_circles      0.1739          0.1739      0.1912  0.6066
+circle_vs_disk   0.0845          0.0686      0.0756  0.0873
+two_moons        0.0329          0.0396      0.0310  0.0332
+crossing_circles 0.1549          0.1449      0.1356  0.3956
+torus_blob       0.0709          0.0709      0.0762  0.1149
+circles_r10      0.6766          0.6766      0.6829  0.6829
+gauss_d2         0.1428          0.1504      0.1232  0.1280
+gauss_d5         0.2222          0.2498      0.2153  0.2214
+gauss_d10        0.3077          0.3126      0.2753  0.2961
+gauss_d20        0.3829          0.4227      0.3212  0.3749
+sphere_blob      0.0791          0.0723      0.0559  0.0760
+two_spheres      0.1808          0.1808      0.1911  0.1955
+two_circles_D10  0.3733          0.3733      0.4161  0.7032
+two_circles_D50  0.6675          0.6675      0.6714  0.6714
+two_circles_D100 0.6364          0.6364      0.6364  0.6364
+sphere_blob_D10  0.0610          0.0561      0.0505  0.0673
+sphere_blob_D50  0.0772          0.0533      0.0548  0.0772
+sphere_blob_D100 0.0633          0.0565      0.0432  0.0646
+
+Degree 2 (dB2_SX)
+method             PENS  Farthest-point  SPOTgreedy  Random
+gen                                                        
+torus_blob       0.4602          0.4602      0.4602  0.4602
+sphere_blob      0.3991          0.3094      0.3909  0.4558
+two_spheres      0.4448          0.4448      0.4564  0.4679
+sphere_blob_D10  0.4258          0.4020      0.4296  0.4462
+sphere_blob_D50  0.4538          0.4280      0.4429  0.4538
+sphere_blob_D100 0.4250          0.3918      0.4184  0.4250
+
+Balanced accuracy (%). The last column is the whole training draw on the same fresh draw, for reference.
+method            PENS  Farthest-point  SPOTgreedy  Random  Full training set
+gen                                                                          
+two_circles      100.0           100.0       100.0    98.6              100.0
+circle_vs_disk    87.5            81.0        87.8    84.9               89.0
+two_moons         98.4            93.5        98.5    97.7               98.4
+crossing_circles  95.7            94.5        95.3    92.8               96.4
+torus_blob        99.9            98.9        99.5    98.0              100.0
+circles_r10      100.0            99.6        99.6    96.1              100.0
+gauss_d2          94.3            84.8        92.7    92.5               92.8
+gauss_d5          91.5            87.0        92.3    89.7               91.9
+gauss_d10         90.0            88.0        90.8    85.9               90.4
+gauss_d20         86.7            85.0        87.9    83.0               87.9
+sphere_blob       96.1            94.1        96.4    92.6               98.5
+two_spheres       97.8            95.8        95.8    92.7              100.0
+two_circles_D10  100.0           100.0       100.0    95.2              100.0
+two_circles_D50   99.5            98.2        98.7    91.7              100.0
+two_circles_D100  99.7            99.1        99.3    90.2              100.0
+sphere_blob_D10   95.7            93.8        96.2    92.5               98.4
+sphere_blob_D50   96.1            92.8        95.5    91.4               98.5
+sphere_blob_D100  96.1            93.6        94.9    89.8               98.5
+
+Balanced accuracy, mean over generators (%): PENS 95.8, Farthest-point 93.3, SPOTgreedy 95.6, Random 92.0
+
+Overall: mean over generators of the per-generator medians, and the share of class rows (generator x seed x eps_scale x completion x class) in which PENS is at least as close to X_c as the method, overall, by completion and by eps_scale.
+
+Degree 0 (18 generators): mean median PENS 0.5011, Farthest-point 0.5181, SPOTgreedy 0.4369, Random 0.5252.
+  PENS at least as close as Farthest-point in 0.794 of 1080 rows (consistent 0.748, gain 0.839; eps_scale 1: 0.811, eps_scale 4: 0.850, eps_scale 16: 0.719).
+  PENS at least as close as SPOTgreedy in 0.544 of 1080 rows (consistent 0.513, gain 0.574; eps_scale 1: 0.783, eps_scale 4: 0.414, eps_scale 16: 0.433).
+  PENS at least as close as Random in 0.785 of 1080 rows (consistent 0.761, gain 0.809; eps_scale 1: 0.914, eps_scale 4: 0.772, eps_scale 16: 0.669).
+
+Degree 1 (18 generators): mean median PENS 0.2438, Farthest-point 0.2448, SPOTgreedy 0.2359, Random 0.3018.
+  PENS at least as close as Farthest-point in 0.784 of 1080 rows (consistent 0.728, gain 0.841; eps_scale 1: 0.736, eps_scale 4: 0.789, eps_scale 16: 0.828).
+  PENS at least as close as SPOTgreedy in 0.584 of 1080 rows (consistent 0.500, gain 0.669; eps_scale 1: 0.400, eps_scale 4: 0.606, eps_scale 16: 0.747).
+  PENS at least as close as Random in 0.745 of 1080 rows (consistent 0.672, gain 0.819; eps_scale 1: 0.686, eps_scale 4: 0.742, eps_scale 16: 0.808).
+
+Degree 2 (6 generators): mean median PENS 0.4348, Farthest-point 0.4060, SPOTgreedy 0.4331, Random 0.4515.
+  PENS at least as close as Farthest-point in 0.743 of 210 rows (consistent 0.648, gain 0.838; eps_scale 1: 0.714, eps_scale 4: 0.671, eps_scale 16: 0.843).
+  PENS at least as close as SPOTgreedy in 0.662 of 210 rows (consistent 0.590, gain 0.733; eps_scale 1: 0.371, eps_scale 4: 0.714, eps_scale 16: 0.900).
+  PENS at least as close as Random in 0.905 of 210 rows (consistent 0.914, gain 0.895; eps_scale 1: 0.714, eps_scale 4: 1.000, eps_scale 16: 1.000).
+
+Degree 0: Wilcoxon signed-rank (two-sided), PENS vs each method over the 18 per-generator values, Holm-corrected over the three; differences are method minus PENS, so a positive difference and a win mean PENS is better.
+Method                   Mean diff.     W-T-L         p    Holm p
+Farthest-point              +0.0170    10-6-2    0.0047    0.0142 *
+SPOTgreedy                  -0.0642    5-2-11    0.0174    0.0348 *
+Random                      +0.0240    10-1-7    0.4925    0.4925
+* Holm-adjusted p < 0.05
+
+Degree 1: Wilcoxon signed-rank (two-sided), PENS vs each method over the 18 per-generator values, Holm-corrected over the three; differences are method minus PENS, so a positive difference and a win mean PENS is better.
+Method                   Mean diff.     W-T-L         p    Holm p
+Farthest-point              +0.0010     5-7-6    0.8589    0.8589
+SPOTgreedy                  -0.0078    6-1-11    0.0929    0.2786
+Random                      +0.0580    11-2-5    0.1208    0.2786
+* Holm-adjusted p < 0.05
+
+Degree 2: Wilcoxon signed-rank (two-sided), PENS vs each method over the 6 per-generator values, Holm-corrected over the three; differences are method minus PENS, so a positive difference and a win mean PENS is better.
+Method                   Mean diff.     W-T-L         p    Holm p
+Farthest-point              -0.0288     0-2-4    0.1250    0.3750
+SPOTgreedy                  -0.0017     2-1-3    0.8125    0.8125
+Random                      +0.0167     3-3-0    0.2500    0.5000
+* Holm-adjusted p < 0.05
+
+Balanced accuracy (points): Wilcoxon signed-rank (two-sided), PENS vs each method over the 18 per-generator values, Holm-corrected over the three; differences are PENS minus method, so a positive difference and a win mean PENS is better.
+Method                   Mean diff.     W-T-L         p    Holm p
+Farthest-point              +2.5079    17-1-0    0.0003    0.0006 *
+SPOTgreedy                  +0.2071    10-1-7    0.3560    0.3560
+Random                      +3.8671    18-0-0    0.0000    0.0000 *
+* Holm-adjusted p < 0.05
+
+Long bars: bars with lifetime above a noise threshold, the same threshold for the four methods of a class row. Three thresholds: 4 eps_c, at which the certificate guarantees that a bar of Dgm(K_c) survives in Dgm(P_c); the half-sample band, 4 times the 95% quantile over 100 random subsamples of X_c of size ceil(n_c / 2) of the Hausdorff distance from the subsample to X_c (Fasy et al. 2014, with the factor of Lemma 1), below which a bar is within the sampling noise of Dgm(X_c); and the matched-size band, the same with subsamples of size |P_c|. For each threshold and degree: the mean number of such bars in Dgm(X_c) and in Dgm(K_c), and per method the share of class rows whose selection has exactly as many as X_c (match) and the mean absolute difference in the count (|diff|), overall and by eps_scale. Rows with eps_c = 0 are left out.
+
+Thresholds over the class rows (medians): 4 eps_c 2.8434, half-sample band 1.7872 (0.840 of 4 eps_c), matched-size band 4.8860 (1.782 of 4 eps_c); by eps_scale, the median ratio to 4 eps_c of the half-sample band is 1: 3.131, 4: 0.783, 16: 0.196 and of the matched-size band 1: 2.868, 4: 2.068, 16: 0.734.
+
+-- 4 eps_c (certificate) --
+Degree 0 (1080 rows): mean bars in X_c 0.319, in K_c 0.256; X_c has at least one in 0.057 of rows.
+  PENS           match 0.957, |diff| 0.070 (eps_scale 1: 0.872, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Farthest-point match 0.989, |diff| 0.015 (eps_scale 1: 0.967, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  SPOTgreedy     match 0.972, |diff| 0.039 (eps_scale 1: 0.928, eps_scale 4: 0.989, eps_scale 16: 1.000)
+  Random         match 0.919, |diff| 0.154 (eps_scale 1: 0.792, eps_scale 4: 0.964, eps_scale 16: 1.000)
+Degree 1 (1080 rows): mean bars in X_c 0.224, in K_c 0.226; X_c has at least one in 0.213 of rows.
+  PENS           match 0.976, |diff| 0.024 (eps_scale 1: 0.989, eps_scale 4: 0.956, eps_scale 16: 0.983)
+  Farthest-point match 0.978, |diff| 0.022 (eps_scale 1: 0.994, eps_scale 4: 0.956, eps_scale 16: 0.983)
+  SPOTgreedy     match 0.972, |diff| 0.028 (eps_scale 1: 0.989, eps_scale 4: 0.956, eps_scale 16: 0.972)
+  Random         match 0.963, |diff| 0.038 (eps_scale 1: 0.969, eps_scale 4: 0.948, eps_scale 16: 0.972)
+Degree 2 (210 rows): mean bars in X_c 0.276, in K_c 0.267; X_c has at least one in 0.276 of rows.
+  PENS           match 0.990, |diff| 0.010 (eps_scale 1: 0.971, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Farthest-point match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  SPOTgreedy     match 0.990, |diff| 0.010 (eps_scale 1: 0.971, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Random         match 0.942, |diff| 0.058 (eps_scale 1: 0.826, eps_scale 4: 1.000, eps_scale 16: 1.000)
+
+-- half-sample band --
+Degree 0 (1080 rows): mean bars in X_c 0.000, in K_c 0.000; X_c has at least one in 0.000 of rows.
+  PENS           match 0.878, |diff| 0.419 (eps_scale 1: 1.000, eps_scale 4: 0.933, eps_scale 16: 0.700)
+  Farthest-point match 0.884, |diff| 0.430 (eps_scale 1: 1.000, eps_scale 4: 0.933, eps_scale 16: 0.719)
+  SPOTgreedy     match 0.896, |diff| 0.327 (eps_scale 1: 1.000, eps_scale 4: 0.956, eps_scale 16: 0.733)
+  Random         match 0.832, |diff| 0.325 (eps_scale 1: 1.000, eps_scale 4: 0.817, eps_scale 16: 0.681)
+Degree 1 (1080 rows): mean bars in X_c 0.328, in K_c 0.333; X_c has at least one in 0.328 of rows.
+  PENS           match 0.905, |diff| 0.095 (eps_scale 1: 0.994, eps_scale 4: 0.911, eps_scale 16: 0.808)
+  Farthest-point match 0.919, |diff| 0.081 (eps_scale 1: 1.000, eps_scale 4: 0.911, eps_scale 16: 0.847)
+  SPOTgreedy     match 0.919, |diff| 0.081 (eps_scale 1: 1.000, eps_scale 4: 0.914, eps_scale 16: 0.842)
+  Random         match 0.846, |diff| 0.154 (eps_scale 1: 0.993, eps_scale 4: 0.830, eps_scale 16: 0.715)
+Degree 2 (210 rows): mean bars in X_c 0.000, in K_c 0.000; X_c has at least one in 0.000 of rows.
+  PENS           match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Farthest-point match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  SPOTgreedy     match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Random         match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+
+-- matched-size band --
+Degree 0 (1080 rows): mean bars in X_c 0.000, in K_c 0.000; X_c has at least one in 0.000 of rows.
+  PENS           match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Farthest-point match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  SPOTgreedy     match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Random         match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+Degree 1 (1080 rows): mean bars in X_c 0.127, in K_c 0.127; X_c has at least one in 0.127 of rows.
+  PENS           match 0.995, |diff| 0.005 (eps_scale 1: 0.997, eps_scale 4: 0.989, eps_scale 16: 1.000)
+  Farthest-point match 0.995, |diff| 0.005 (eps_scale 1: 0.997, eps_scale 4: 0.989, eps_scale 16: 1.000)
+  SPOTgreedy     match 0.996, |diff| 0.004 (eps_scale 1: 0.997, eps_scale 4: 0.992, eps_scale 16: 1.000)
+  Random         match 0.991, |diff| 0.009 (eps_scale 1: 0.994, eps_scale 4: 0.978, eps_scale 16: 1.000)
+Degree 2 (210 rows): mean bars in X_c 0.000, in K_c 0.000; X_c has at least one in 0.000 of rows.
+  PENS           match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Farthest-point match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  SPOTgreedy     match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+  Random         match 1.000, |diff| 0.000 (eps_scale 1: 1.000, eps_scale 4: 1.000, eps_scale 16: 1.000)
+
+Per generator, half-sample band: share of class rows (eps_c > 0) whose selection has exactly as many long bars as X_c, in degrees 1 and 2 (degree 2 where beta2 > 0), by method.
+                 degree 1                                  degree 2                                 
+method               PENS Farthest-point SPOTgreedy Random     PENS Farthest-point SPOTgreedy Random
+gen                                                                                                 
+two_circles         0.967          0.967      0.933  0.780                                          
+circle_vs_disk      0.817          0.883      0.917  0.793                                          
+two_moons           1.000          1.000      1.000  1.000                                          
+crossing_circles    0.933          1.000      1.000  0.777                                          
+torus_blob          1.000          1.000      1.000  1.000    1.000          1.000      1.000  1.000
+circles_r10         0.333          0.333      0.333  0.333                                          
+gauss_d2            1.000          1.000      1.000  1.000                                          
+gauss_d5            1.000          1.000      1.000  1.000                                          
+gauss_d10           1.000          1.000      1.000  1.000                                          
+gauss_d20           1.000          1.000      1.000  1.000                                          
+sphere_blob         1.000          1.000      1.000  1.000    1.000          1.000      1.000  1.000
+two_spheres         1.000          1.000      1.000  1.000    1.000          1.000      1.000  1.000
+two_circles_D10     0.833          0.833      0.833  0.520                                          
+two_circles_D50     0.517          0.600      0.583  0.373                                          
+two_circles_D100    0.883          0.933      0.933  0.653                                          
+sphere_blob_D10     1.000          1.000      1.000  1.000    1.000          1.000      1.000  1.000
+sphere_blob_D50     1.000          1.000      1.000  1.000    1.000          1.000      1.000  1.000
+sphere_blob_D100    1.000          1.000      1.000  1.000    1.000          1.000      1.000  1.000
+
+Longest bar: the lifetime of the longest bar of Dgm_k(X_c) and of the selection (mean over draws). Per degree: the median over class rows with a bar in X_c of the ratio of the selection's longest bar to that of X_c, by method; then, per threshold, among the class rows whose longest bar of X_c exceeds the threshold (a dominant feature above the noise), the share of rows (draws) in which the selection's longest bar exceeds it too, by method, overall and by eps_scale. Rows with eps_c = 0 are left out.
+
+Degree 0 (1080 rows with a bar in X_c; median longest bar of X_c 0.3127, of K_c 0.3094): median ratio PENS 1.428, Farthest-point 1.437, SPOTgreedy 1.131, Random 1.361.
+Degree 1 (1080 rows with a bar in X_c; median longest bar of X_c 0.6205, of K_c 0.6205): median ratio PENS 0.925, Farthest-point 0.955, SPOTgreedy 0.899, Random 0.804.
+Degree 2 (210 rows with a bar in X_c; median longest bar of X_c 0.9358, of K_c 0.9117): median ratio PENS 0.542, Farthest-point 0.674, SPOTgreedy 0.609, Random 0.276.
+
+-- 4 eps_c (certificate) --
+Degree 0 (62 of 1080 rows above the threshold): kept above it by PENS 0.935 (1: 0.935); Farthest-point 1.000 (1: 1.000); SPOTgreedy 1.000 (1: 1.000); Random 0.961 (1: 0.961).
+Degree 1 (230 of 1080 rows above the threshold): kept above it by PENS 0.904 (1: 1.000, 4: 0.789, 16: 0.400); Farthest-point 0.904 (1: 1.000, 4: 0.789, 16: 0.400); SPOTgreedy 0.878 (1: 0.986, 4: 0.789, 16: 0.000); Random 0.870 (1: 0.992, 4: 0.755, 16: 0.000).
+Degree 2 (58 of 210 rows above the threshold): kept above it by PENS 0.966 (1: 0.966); Farthest-point 1.000 (1: 1.000); SPOTgreedy 0.966 (1: 0.966); Random 0.790 (1: 0.790).
+
+-- half-sample band --
+Degree 0: no class row has its longest bar above the threshold.
+Degree 1 (354 of 1080 rows above the threshold): kept above it by PENS 0.723 (1: 1.000, 4: 0.746, 16: 0.424); Farthest-point 0.754 (1: 1.000, 4: 0.729, 16: 0.534); SPOTgreedy 0.757 (1: 1.000, 4: 0.746, 16: 0.525); Random 0.537 (1: 0.997, 4: 0.485, 16: 0.131).
+Degree 2: no class row has its longest bar above the threshold.
+
+-- matched-size band --
+Degree 0: no class row has its longest bar above the threshold.
+Degree 1 (137 of 1080 rows above the threshold): kept above it by PENS 0.964 (1: 0.992, 4: 0.714); Farthest-point 0.964 (1: 0.992, 4: 0.714); SPOTgreedy 0.971 (1: 0.992, 4: 0.786); Random 0.927 (1: 0.984, 4: 0.429).
+Degree 2: no class row has its longest bar above the threshold.
+
+Per generator and eps_scale: median d_B to X_c by method (over seeds, completions and classes), and the median balanced accuracy (%).
+
+Degree 0 (dB0_SX)
+method                       PENS  Farthest-point  SPOTgreedy  Random
+gen              eps_scale                                           
+two_circles      1.0       0.0173          0.0173      0.0189  0.0536
+                 4.0       0.1372          0.1372      0.1499  0.3137
+                 16.0      0.4351          0.4351      0.4540  0.7535
+circle_vs_disk   1.0       0.0256          0.0228      0.0228  0.0443
+                 4.0       0.1434          0.1427      0.1294  0.1850
+                 16.0      0.3458          0.2280      0.2007  0.2767
+two_moons        1.0       0.0201          0.0188      0.0187  0.0483
+                 4.0       0.1281          0.1431      0.0922  0.1428
+                 16.0      0.4190          0.3944      0.2429  0.3884
+crossing_circles 1.0       0.0184          0.0150      0.0159  0.0398
+                 4.0       0.1227          0.1207      0.1061  0.2025
+                 16.0      0.4229          0.3074      0.3014  0.4694
+torus_blob       1.0       0.0865          0.0865      0.0884  0.1119
+                 4.0       0.5680          0.5680      0.3254  0.4462
+                 16.0      1.0370          1.0271      0.8208  0.9555
+circles_r10      1.0       0.0705          0.0705      0.0705  0.0705
+                 4.0       0.4583          0.4583      0.4222  0.6613
+                 16.0      0.7050          0.7808      0.6941  0.7438
+gauss_d2         1.0       0.1546          0.0496      0.0510  0.2760
+                 4.0       0.2626          0.2953      0.4747  0.4481
+                 16.0      1.1270          1.0033      0.3991  0.5161
+gauss_d5         1.0       0.3783          0.3783      0.3783  0.3851
+                 4.0       1.5585          1.4329      0.7590  0.7947
+                 16.0      0.9177          1.0897      0.9833  0.8603
+gauss_d10        1.0       0.9221          0.9221      0.9221  0.9221
+                 4.0       1.4498          1.4814      1.4498  1.4506
+                 16.0      1.4498          1.4814      1.4498  1.4518
+gauss_d20        1.0       1.7725          1.7725      1.7725  1.7725
+                 4.0       2.2867          2.2867      2.2867  2.2867
+                 16.0      2.2867          2.2867      2.2867  2.2867
+sphere_blob      1.0       0.0545          0.0491      0.0491  0.0673
+                 4.0       0.3197          0.3054      0.2117  0.2944
+                 16.0      0.3330          0.4206      0.2659  0.3519
+two_spheres      1.0       0.0834          0.0834      0.0817  0.1307
+                 4.0       0.4809          0.4809      0.5210  0.5703
+                 16.0      0.8702          0.9141      0.8650  0.8847
+two_circles_D10  1.0       0.0390          0.0390      0.0390  0.0459
+                 4.0       0.2469          0.2469      0.2774  0.5407
+                 16.0      0.7725          0.7786      0.7555  0.9554
+two_circles_D50  1.0       0.0909          0.0909      0.0909  0.0909
+                 4.0       0.4689          0.4689      0.4930  0.7703
+                 16.0      0.8856          0.8077      0.8406  1.0596
+two_circles_D100 1.0       0.1307          0.1307      0.1307  0.1307
+                 4.0       0.7844          0.7844      0.7517  0.9699
+                 16.0      0.8315          0.8097      0.8062  1.0341
+sphere_blob_D10  1.0       0.0651          0.0597      0.0597  0.0666
+                 4.0       0.3430          0.3514      0.2522  0.3013
+                 16.0      0.3457          0.3630      0.2922  0.3176
+sphere_blob_D50  1.0       0.1069          0.1050      0.1050  0.1066
+                 4.0       0.3252          0.4035      0.3028  0.3511
+                 16.0      0.3497          0.3979      0.2795  0.3851
+sphere_blob_D100 1.0       0.1446          0.1427      0.1427  0.1436
+                 4.0       0.3147          0.3480      0.3051  0.3288
+                 16.0      0.3499          0.4013      0.3051  0.3741
+
+Degree 1 (dB1_SX)
+method                       PENS  Farthest-point  SPOTgreedy  Random
+gen              eps_scale                                           
+two_circles      1.0       0.0143          0.0143      0.0177  0.0753
+                 4.0       0.1739          0.1739      0.1912  0.6066
+                 16.0      0.7230          0.7230      0.7813  1.1247
+circle_vs_disk   1.0       0.0622          0.0244      0.0270  0.0658
+                 4.0       0.1045          0.0743      0.1173  0.1869
+                 16.0      0.2141          0.1379      0.1377  0.2244
+two_moons        1.0       0.0214          0.0200      0.0200  0.0309
+                 4.0       0.0486          0.0462      0.0369  0.0374
+                 16.0      0.0329          0.0494      0.0329  0.0329
+crossing_circles 1.0       0.0273          0.0126      0.0148  0.0572
+                 4.0       0.1506          0.1449      0.1356  0.3956
+                 16.0      0.7304          0.5274      0.5387  0.7304
+torus_blob       1.0       0.0623          0.0623      0.0762  0.1084
+                 4.0       0.2763          0.2763      0.3087  0.3835
+                 16.0      0.6430          0.6430      0.6430  0.6430
+circles_r10      1.0       0.0207          0.0207      0.0184  0.0259
+                 4.0       0.6852          0.6852      0.6877  0.6877
+                 16.0      0.6877          0.6877      0.6877  0.6877
+gauss_d2         1.0       0.0753          0.0573      0.0671  0.1108
+                 4.0       0.1584          0.1523      0.1402  0.1417
+                 16.0      0.2121          0.2372      0.1408  0.1357
+gauss_d5         1.0       0.1726          0.1860      0.1584  0.1486
+                 4.0       0.2474          0.3066      0.2356  0.2390
+                 16.0      0.2394          0.2626      0.2381  0.2415
+gauss_d10        1.0       0.2587          0.2755      0.2270  0.1669
+                 4.0       0.3126          0.3304      0.3063  0.3079
+                 16.0      0.3126          0.3304      0.3063  0.3097
+gauss_d20        1.0       0.3441          0.3579      0.2319  0.1966
+                 4.0       0.3978          0.4472      0.3905  0.3935
+                 16.0      0.3978          0.4472      0.3905  0.3850
+sphere_blob      1.0       0.0492          0.0402      0.0401  0.0742
+                 4.0       0.1366          0.1260      0.1159  0.1313
+                 16.0      0.1350          0.1356      0.1029  0.1029
+two_spheres      1.0       0.0853          0.0853      0.0993  0.1758
+                 4.0       0.2599          0.2599      0.2670  0.3284
+                 16.0      0.2539          0.2539      0.2539  0.2539
+two_circles_D10  1.0       0.0143          0.0143      0.0135  0.0548
+                 4.0       0.3733          0.3733      0.4161  0.8666
+                 16.0      1.0781          1.0781      1.1168  1.1168
+two_circles_D50  1.0       0.0173          0.0173      0.0121  0.0349
+                 4.0       0.6797          0.6797      0.7744  1.0926
+                 16.0      1.0926          1.0071      1.0926  1.0926
+two_circles_D100 1.0       0.0161          0.0161      0.0167  0.0282
+                 4.0       0.9611          0.9611      1.0441  1.0557
+                 16.0      1.0163          0.9823      1.0441  1.0557
+sphere_blob_D10  1.0       0.0438          0.0414      0.0362  0.0650
+                 4.0       0.1073          0.1249      0.0960  0.1139
+                 16.0      0.1168          0.1219      0.0897  0.0900
+sphere_blob_D50  1.0       0.0334          0.0299      0.0343  0.0677
+                 4.0       0.1096          0.1296      0.0994  0.1009
+                 16.0      0.1059          0.1174      0.1080  0.0994
+sphere_blob_D100 1.0       0.0350          0.0296      0.0411  0.0620
+                 4.0       0.0973          0.0975      0.0860  0.0860
+                 16.0      0.1087          0.0975      0.0860  0.0880
+
+Degree 2 (dB2_SX)
+method                       PENS  Farthest-point  SPOTgreedy  Random
+gen              eps_scale                                           
+torus_blob       1.0       0.0312          0.0312      0.0353  0.2246
+                 4.0       0.4680          0.4680      0.4680  0.4680
+                 16.0      0.4680          0.4680      0.4680  0.4680
+sphere_blob      1.0       0.2590          0.0223      0.0355  0.0771
+                 4.0       0.3991          0.3094      0.3909  0.4578
+                 16.0      0.4578          0.4568      0.4568  0.4578
+two_spheres      1.0       0.0322          0.0322      0.0561  0.1802
+                 4.0       0.4564          0.4564      0.4786  0.6542
+                 16.0      0.6940          0.6940      0.6940  0.6940
+sphere_blob_D10  1.0       0.1907          0.0059      0.0033  0.0979
+                 4.0       0.4258          0.4241      0.4296  0.4473
+                 16.0      0.4473          0.4473      0.4473  0.4473
+sphere_blob_D50  1.0       0.0183          0.0183      0.0209  0.0914
+                 4.0       0.4726          0.4465      0.4632  0.4726
+                 16.0      0.4726          0.4553      0.4726  0.4726
+sphere_blob_D100 1.0       0.0243          0.0208      0.0124  0.0449
+                 4.0       0.4434          0.4184      0.4224  0.4434
+                 16.0      0.4434          0.4230      0.4342  0.4434
+
+Balanced accuracy (%)
+method                      PENS  Farthest-point  SPOTgreedy  Random
+gen              eps_scale                                          
+two_circles      1.0       100.0           100.0       100.0   100.0
+                 4.0       100.0           100.0       100.0   100.0
+                 16.0      100.0           100.0       100.0    96.3
+circle_vs_disk   1.0        89.2            87.9        88.1    88.4
+                 4.0        86.9            81.6        88.7    85.5
+                 16.0       87.1            75.4        86.3    81.1
+two_moons        1.0        98.5            98.2        98.4    98.4
+                 4.0        98.3            97.0        98.8    98.3
+                 16.0       98.2            86.3        98.5    97.0
+crossing_circles 1.0        95.9            96.2        95.8    96.0
+                 4.0        95.7            94.9        96.3    94.9
+                 16.0       95.3            93.4        93.5    87.9
+torus_blob       1.0       100.0           100.0       100.0   100.0
+                 4.0        99.9            99.9       100.0    99.9
+                 16.0       99.8            97.4        98.5    93.9
+circles_r10      1.0       100.0           100.0       100.0   100.0
+                 4.0       100.0           100.0       100.0   100.0
+                 16.0      100.0            99.1        99.0    88.8
+gauss_d2         1.0        94.6            92.4        92.2    93.1
+                 4.0        94.6            87.5        91.9    92.3
+                 16.0       94.6            76.5        94.4    92.2
+gauss_d5         1.0        91.6            90.9        90.9    91.8
+                 4.0        90.6            82.9        93.0    90.8
+                 16.0       92.3            89.7        93.0    87.5
+gauss_d10        1.0        90.1            88.5        89.4    89.9
+                 4.0        89.9            87.8        91.5    86.4
+                 16.0       89.9            87.8        91.5    85.0
+gauss_d20        1.0        87.7            85.4        87.4    87.6
+                 4.0        86.6            83.6        88.0    84.2
+                 16.0       86.6            83.6        88.0    84.4
+sphere_blob      1.0        98.0            98.5        98.5    98.1
+                 4.0        96.4            93.8        97.1    94.4
+                 16.0       94.4            89.8        93.9    85.9
+two_spheres      1.0       100.0           100.0       100.0   100.0
+                 4.0       100.0           100.0       100.0    98.7
+                 16.0       99.1            93.4        93.8    81.2
+two_circles_D10  1.0       100.0           100.0       100.0   100.0
+                 4.0       100.0           100.0       100.0    99.7
+                 16.0      100.0           100.0       100.0    86.7
+two_circles_D50  1.0       100.0           100.0       100.0   100.0
+                 4.0       100.0           100.0       100.0    94.7
+                 16.0       99.9           100.0        98.9    81.8
+two_circles_D100 1.0       100.0           100.0       100.0   100.0
+                 4.0       100.0           100.0       100.0    87.8
+                 16.0      100.0           100.0       100.0    82.9
+sphere_blob_D10  1.0        98.7            98.5        98.5    98.3
+                 4.0        95.3            92.3        96.7    93.7
+                 16.0       94.1            91.8        94.1    86.9
+sphere_blob_D50  1.0        98.8            98.8        98.7    98.5
+                 4.0        95.2            89.3        95.6    89.4
+                 16.0       95.7            91.2        95.8    88.2
+sphere_blob_D100 1.0        98.8            98.7        98.2    98.2
+                 4.0        96.1            91.7        94.0    87.0
+                 16.0       94.5            90.3        93.8    88.3
+
+What the certificate controls: median over seeds, completions and classes of d_B(P_c, K_c) / (2 eps_c) by degree (rows with eps_c > 0).
+                            dB0_PK / 2eps  dB1_PK / 2eps  dB2_PK / 2eps
+gen              eps_scale                                             
+two_circles      1.0               0.2095         0.1721               
+                 4.0               0.4182         0.5161               
+                 16.0              0.3255         0.5414               
+circle_vs_disk   1.0               0.2222         0.2336               
+                 4.0               0.3660         0.2350               
+                 16.0              0.2217         0.1268               
+two_moons        1.0               0.2101         0.2366               
+                 4.0               0.3831         0.1344               
+                 16.0              0.2944         0.0233               
+crossing_circles 1.0               0.2108         0.2268               
+                 4.0               0.4465         0.4337               
+                 16.0              0.3854         0.6567               
+torus_blob       1.0               0.2231         0.1572         0.0818
+                 4.0               0.3636         0.1817         0.2967
+                 16.0              0.1609         0.1013         0.0742
+circles_r10      1.0               0.2287         0.0673               
+                 4.0               0.3730         0.5557               
+                 16.0              0.1429         0.1405               
+gauss_d2         1.0               0.2086         0.2251               
+                 4.0               0.3102         0.1717               
+                 16.0              0.3073         0.0566               
+gauss_d5         1.0               0.2200         0.1038               
+                 4.0               0.2344         0.0369               
+                 16.0              0.0341         0.0088               
+gauss_d10        1.0               0.2271         0.0645               
+                 4.0               0.0904         0.0195               
+                 16.0              0.0226         0.0049               
+gauss_d20        1.0               0.2326         0.0443               
+                 4.0               0.0756         0.0133               
+                 16.0              0.0189         0.0033               
+sphere_blob      1.0               0.2151         0.1837         0.0899
+                 4.0               0.3646         0.1557         0.3229
+                 16.0              0.0938         0.0384         0.1147
+two_spheres      1.0               0.2353         0.2396         0.0882
+                 4.0               0.3335         0.1786         0.3234
+                 16.0              0.1536         0.0436         0.1206
+two_circles_D10  1.0               0.2284         0.0833               
+                 4.0               0.3622         0.5485               
+                 16.0              0.2828         0.3936               
+two_circles_D50  1.0               0.2396         0.0457               
+                 4.0               0.3088         0.4491               
+                 16.0              0.1460         0.1799               
+two_circles_D100 1.0               0.2424         0.0298               
+                 4.0               0.3633         0.4453               
+                 16.0              0.0963         0.1178               
+sphere_blob_D10  1.0               0.2219         0.1474         0.0225
+                 4.0               0.3387         0.1052         0.2367
+                 16.0              0.0832         0.0289         0.0806
+sphere_blob_D50  1.0               0.2379         0.0708         0.0190
+                 4.0               0.1960         0.0623         0.2548
+                 16.0              0.0497         0.0150         0.0637
+sphere_blob_D100 1.0               0.2405         0.0427         0.0261
+                 4.0               0.1448         0.0413         0.1786
+                 16.0              0.0356         0.0125         0.0446
+
+The bound holds in 1080 of 1080 class rows with eps_c > 0.

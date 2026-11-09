@@ -1,0 +1,65 @@
+Statistical tests over N = 18 datasets (per-dataset means over 5 outer folds); alpha = 0.05. The full training set is excluded.
+
+Wilcoxon signed-rank, PENS vs competitor: Balanced accuracy (mean difference in points, datasets won-tied-lost)
+Competitor               Mean diff.     W-T-L         p    Holm p
+ENN                           +2.89    12-0-6    0.1815    1.0000
+CNN                           +2.46    10-0-8    0.1815    1.0000
+DROP3                         +2.23    15-0-3    0.0010    0.0094 *
+ICF                          +11.16    17-0-1    0.0000    0.0002 *
+IB3                           +3.47    14-0-4    0.0023    0.0187 *
+HMN-EI                        +0.09    10-0-8    0.9661    1.0000
+LSBo                          +1.47    11-0-7    0.0898    0.6284
+PS (Bien-Tibshirani)          +2.41    8-0-10    0.7019    1.0000
+GKN (Gottlieb et al.)         +0.25    7-0-11    0.8317    1.0000
+Random (matched)              +8.47    18-0-0    0.0000    0.0001 *
+SPOTgreedy (matched)          +1.16    11-0-7    0.1674    1.0000
+* Holm-adjusted p < 0.05
+
+Wilcoxon signed-rank, PENS vs competitor: Reduction (mean difference in points, datasets won-tied-lost)
+Competitor               Mean diff.     W-T-L         p    Holm p
+ENN                          +68.76    18-0-0    0.0000    0.0001 *
+CNN                          +18.59    16-0-2    0.0001    0.0012 *
+DROP3                         -0.62    6-0-12    0.4683    1.0000
+ICF                           +7.90    12-0-6    0.0304    0.2126
+IB3                           +9.50    12-0-6    0.0432    0.2590
+HMN-EI                       +33.45    18-0-0    0.0000    0.0001 *
+LSBo                          +4.17     9-0-9    0.3465    1.0000
+PS (Bien-Tibshirani)          +4.58    13-0-5    0.1297    0.6487
+GKN (Gottlieb et al.)        +32.89    18-0-0    0.0000    0.0001 *
+Random (matched)              +0.00    0-18-0    1.0000    1.0000
+SPOTgreedy (matched)          +0.00    0-18-0    1.0000    1.0000
+* Holm-adjusted p < 0.05
+
+Wilcoxon signed-rank, PENS vs competitor: Effectiveness (mean difference in points, datasets won-tied-lost)
+Competitor               Mean diff.     W-T-L         p    Holm p
+ENN                          +58.12    18-0-0    0.0000    0.0001 *
+CNN                          +13.59    17-0-1    0.0000    0.0001 *
+DROP3                         +1.08    10-0-8    0.6705    0.6705
+ICF                          +15.18    17-0-1    0.0000    0.0001 *
+IB3                           +8.05    16-0-2    0.0008    0.0042 *
+HMN-EI                       +26.70    17-0-1    0.0000    0.0001 *
+LSBo                          +3.63    11-0-7    0.1674    0.5021
+PS (Bien-Tibshirani)          +5.99    13-0-5    0.0539    0.2154
+GKN (Gottlieb et al.)        +24.33    18-0-0    0.0000    0.0001 *
+Random (matched)              +7.51    18-0-0    0.0000    0.0001 *
+SPOTgreedy (matched)          +0.97    11-0-7    0.1674    0.5021
+* Holm-adjusted p < 0.05
+
+Friedman tests and Nemenyi critical difference: k = 12 methods, q_0.05 = 3.268, CD = 3.928
+
+Balanced accuracy: Friedman chi2 = 78.67 (df = 11), p = 2.66e-12
+Average ranks (1 = best): GKN (Gottlieb et al.) 4.06, HMN-EI 4.28, PENS 4.61, PS (Bien-Tibshirani) 5.19, ENN 5.56, SPOTgreedy (matched) 5.75, CNN 5.86, LSBo 5.92, DROP3 7.28, IB3 8.17, Random (matched) 10.28, ICF 11.06
+Groups not significantly different (Nemenyi): {GKN (Gottlieb et al.), HMN-EI, PENS, PS (Bien-Tibshirani), ENN, SPOTgreedy (matched), CNN, LSBo, DROP3}; {HMN-EI, PENS, PS (Bien-Tibshirani), ENN, SPOTgreedy (matched), CNN, LSBo, DROP3, IB3}; {DROP3, IB3, Random (matched), ICF}
+
+Reduction: Friedman chi2 = 128.07 (df = 11), p = 4.27e-22
+Average ranks (1 = best): DROP3 2.78, PENS 4.22, Random (matched) 4.22, SPOTgreedy (matched) 4.22, LSBo 4.44, PS (Bien-Tibshirani) 5.72, ICF 5.83, IB3 6.17, CNN 8.61, HMN-EI 9.72, GKN (Gottlieb et al.) 10.50, ENN 11.56
+Groups not significantly different (Nemenyi): {DROP3, PENS, Random (matched), SPOTgreedy (matched), LSBo, PS (Bien-Tibshirani), ICF, IB3}; {PS (Bien-Tibshirani), ICF, IB3, CNN}; {ICF, IB3, CNN, HMN-EI}; {CNN, HMN-EI, GKN (Gottlieb et al.), ENN}
+
+Effectiveness: Friedman chi2 = 128.58 (df = 11), p = 3.37e-22
+Average ranks (1 = best): PENS 2.78, DROP3 3.00, SPOTgreedy (matched) 3.39, LSBo 4.11, PS (Bien-Tibshirani) 5.44, IB3 6.06, Random (matched) 6.28, CNN 8.06, ICF 8.22, HMN-EI 9.11, GKN (Gottlieb et al.) 10.00, ENN 11.56
+Groups not significantly different (Nemenyi): {PENS, DROP3, SPOTgreedy (matched), LSBo, PS (Bien-Tibshirani), IB3, Random (matched)}; {PS (Bien-Tibshirani), IB3, Random (matched), CNN, ICF, HMN-EI}; {Random (matched), CNN, ICF, HMN-EI, GKN (Gottlieb et al.)}; {CNN, ICF, HMN-EI, GKN (Gottlieb et al.), ENN}
+
+Fit time: Friedman chi2 = 147.44 (df = 11), p = 4.96e-26
+Average ranks (1 = best): Random (matched) 1.00, ENN 2.22, PS (Bien-Tibshirani) 4.50, LSBo 5.06, ICF 5.39, PENS 6.67, HMN-EI 6.94, SPOTgreedy (matched) 7.28, GKN (Gottlieb et al.) 7.61, DROP3 9.78, CNN 10.00, IB3 11.56
+Groups not significantly different (Nemenyi): {Random (matched), ENN, PS (Bien-Tibshirani)}; {ENN, PS (Bien-Tibshirani), LSBo, ICF}; {PS (Bien-Tibshirani), LSBo, ICF, PENS, HMN-EI, SPOTgreedy (matched), GKN (Gottlieb et al.)}; {PENS, HMN-EI, SPOTgreedy (matched), GKN (Gottlieb et al.), DROP3, CNN}; {DROP3, CNN, IB3}
+

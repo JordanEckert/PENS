@@ -1,0 +1,10 @@
+build/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+.DS_Store
+benchmarks/real/results/shards/
+benchmarks/real/results/components_shards/
+benchmarks/real/.cache/

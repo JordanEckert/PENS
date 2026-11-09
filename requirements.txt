@@ -1,0 +1,8 @@
+# The package with its test and certificate extras, and the packages the benchmark scripts use.
+# Install from the repository root: pip install -r requirements.txt
+-e .[dev,certificate]
+scikit-learn
+pandas
+matplotlib
+pillow
+six

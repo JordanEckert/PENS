@@ -1,0 +1,34 @@
+Remark 1: 1-NN consistency of the prototypes on the kept points. A failure is a kept point with a prototype of another class strictly closer than every prototype of its own class; an equidistant kept point has, at some single distance, points of K u G of two different labels.
+
+Tie-heavy: 400 datasets, consistent completion.
+  pruning off: 0 failing kept points in 0 datasets.
+  pruning on: 49 failing kept points in 25 datasets, of which 25 contain an equidistant kept point.
+    seed 4: 1 failing point, equidistant kept point present
+    seed 16: 1 failing point, equidistant kept point present
+    seed 42: 4 failing points, equidistant kept point present
+    seed 68: 2 failing points, equidistant kept point present
+    seed 94: 1 failing point, equidistant kept point present
+    seed 100: 3 failing points, equidistant kept point present
+    seed 105: 1 failing point, equidistant kept point present
+    seed 135: 1 failing point, equidistant kept point present
+    seed 137: 2 failing points, equidistant kept point present
+    seed 150: 6 failing points, equidistant kept point present
+    seed 196: 1 failing point, equidistant kept point present
+    seed 215: 1 failing point, equidistant kept point present
+    seed 217: 1 failing point, equidistant kept point present
+    seed 233: 1 failing point, equidistant kept point present
+    seed 250: 1 failing point, equidistant kept point present
+    seed 263: 3 failing points, equidistant kept point present
+    seed 282: 1 failing point, equidistant kept point present
+    seed 294: 1 failing point, equidistant kept point present
+    seed 316: 1 failing point, equidistant kept point present
+    seed 338: 1 failing point, equidistant kept point present
+    seed 364: 4 failing points, equidistant kept point present
+    seed 366: 1 failing point, equidistant kept point present
+    seed 384: 5 failing points, equidistant kept point present
+    seed 389: 4 failing points, equidistant kept point present
+    seed 395: 1 failing point, equidistant kept point present
+
+Continuous: 1000 datasets, consistent completion.
+  pruning off: 0 failing kept points in 0 datasets.
+  pruning on: 0 failing kept points in 0 datasets.

@@ -1,0 +1,15 @@
+Figure 2: two_circles, seed 0, eps_scale 8, consistent completion, class 0 (the unit circle). Values checked against results/certificate.csv.
+
+n_class: 400
+n_kept: 400
+n_proto: 16
+eps: 0.3232
+two_eps: 0.6465
+four_eps: 1.2929
+certified_lifetime: 1.4743
+n_certified: 1
+partner_lifetime: 1.2401
+partner_distance: 0.3730
+dB0: 0.2384
+dB1: 0.3730
+The certified bar's partner in Dgm(P_c) lies at L-infinity distance 0.3730 <= 2 eps_c = 0.6465 from it.

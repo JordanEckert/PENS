@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "PENS: Persistence-Edited Net Selection"
+version: 1.0.0
+date-released: 2026-11-09
+url: "https://github.com/JordanEckert/PENS"
+repository-code: "https://github.com/JordanEckert/PENS"
+license: MIT
+type: software
+authors:
+  - family-names: Eckert
+    given-names: Jordan
+    orcid: "https://orcid.org/0000-0003-0873-5952"
+    affiliation: "Department of Mathematics & Statistics, Auburn University"
+keywords:
+  - topological data analysis
+  - persistent homology
+  - prototype selection
+  - epsilon-net
+  - data reduction

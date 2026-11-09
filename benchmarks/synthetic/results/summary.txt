@@ -1,0 +1,336 @@
+== Certificate arm ==
+Certificate holds in 3240 of 3240 rows (classes with at least two kept points); the end-to-end bound holds in 2929 of 2929 rows (at least two prototypes and two kept points).
+
+Median d_H(P, K) / eps and median max_k d_B(P, K) / (2 eps) by eps_scale:
+           dH/eps  dB/bound
+eps_scale                  
+0.5         0.969     0.231
+1.0         0.999     0.232
+2.0         0.991     0.298
+4.0         0.963     0.365
+8.0         0.758     0.303
+16.0        0.508     0.142
+
+Largest eps_scale at which the number of degree-k bars of Dgm(K_c) longer than 4 eps is at least the true beta_k in all 5 seeds, and the median retention |P_c| / n_c there (none: no eps_scale qualifies):
+                             beta  eps_consistent  retention_consistent  eps_gain  retention_gain
+gen              cls degree                                                                      
+two_circles      0   1          1            8.00                  0.04      8.00            0.04
+                 1   1          1           16.00                  0.04     16.00            0.04
+circle_vs_disk   0   1          1            4.00                  0.16      4.00            0.13
+crossing_circles 0   1          1            8.00                  0.07      8.00            0.04
+                 1   1          1            8.00                  0.07      8.00            0.05
+torus_blob       0   1          2            1.00                  0.75      1.00            0.75
+                     2          1            1.00                  0.75      1.00            0.75
+circles_r10      0   1          1            2.00                  0.08      2.00            0.08
+                 1   1          1            2.00                  0.09      2.00            0.09
+sphere_blob      0   2          1            1.00                  0.69      1.00            0.69
+two_spheres      0   2          1            1.00                  0.45      1.00            0.45
+                 1   2          1            2.00                  0.44      2.00            0.44
+two_circles_D10  0   1          1            4.00                  0.04      4.00            0.04
+                 1   1          1            8.00                  0.04      8.00            0.04
+two_circles_D50  0   1          1            1.00                  0.66      1.00            0.66
+                 1   1          1            2.00                  0.08      2.00            0.08
+two_circles_D100 0   1          1            1.00                  0.68      1.00            0.68
+                 1   1          1            2.00                  0.04      2.00            0.04
+sphere_blob_D10  0   2          1            1.00                  0.69      1.00            0.69
+sphere_blob_D50  0   2          1            0.50                  1.00      0.50            1.00
+sphere_blob_D100 0   2          1            0.50                  1.00      0.50            1.00
+
+Share of rows of classes with beta1 = 0 that certify at least one degree-1 bar, by eps_scale: 0.5: 0.28, 1: 0.03, 2: 0.00, 4: 0.00, 8: 0.00, 16: 0.00
+(Degree 2 is computed only for classes with beta2 = 1, so there is no such count in degree 2.)
+
+Degree 2, consistent completion: seeds (of 5) whose kept set has a degree-2 bar longer than 4 eps, median lifetime of the longest degree-2 bar of K_c, median 4 eps and median retention |P_c| / n_c:
+                                certified_seeds  void_lifetime_K  four_eps  retention
+gen              cls eps_scale                                                       
+sphere_blob      0   0.5                      5            0.791     0.218      0.877
+                     1.0                      5            0.791     0.435      0.687
+                     2.0                      1            0.791     0.871      0.327
+                     4.0                      0            0.791     1.741      0.130
+                     8.0                      0            0.791     3.483      0.083
+                     16.0                     0            0.791     6.966      0.083
+sphere_blob_D10  0   0.5                      5            0.669     0.264      0.963
+                     1.0                      5            0.669     0.528      0.693
+                     2.0                      0            0.669     1.055      0.280
+                     4.0                      0            0.669     2.110      0.113
+                     8.0                      0            0.669     4.221      0.083
+                     16.0                     0            0.669     8.442      0.080
+sphere_blob_D100 0   0.5                      5            0.850     0.592      1.000
+                     1.0                      0            0.850     1.185      0.777
+                     2.0                      0            0.850     2.369      0.120
+                     4.0                      0            0.850     4.738      0.097
+                     8.0                      0            0.850     9.477      0.083
+                     16.0                     0            0.850    18.954      0.083
+sphere_blob_D50  0   0.5                      5            0.894     0.439      1.000
+                     1.0                      3            0.894     0.879      0.737
+                     2.0                      0            0.894     1.757      0.153
+                     4.0                      0            0.894     3.515      0.100
+                     8.0                      0            0.894     7.030      0.087
+                     16.0                     0            0.894    14.059      0.083
+torus_blob       0   0.5                      5            0.936     0.391      0.932
+                     1.0                      5            0.936     0.782      0.751
+                     2.0                      0            0.936     1.564      0.414
+                     4.0                      0            0.936     3.127      0.136
+                     8.0                      0            0.936     6.254      0.041
+                     16.0                     0            0.936    12.509      0.014
+two_spheres      0   0.5                      5            0.936     0.357      0.793
+                     1.0                      5            0.936     0.715      0.450
+                     2.0                      0            0.936     1.429      0.170
+                     4.0                      0            0.936     2.858      0.047
+                     8.0                      0            0.936     5.716      0.020
+                     16.0                     0            0.936    11.433      0.020
+                 1   0.5                      5            2.023     0.357      0.943
+                     1.0                      5            2.023     0.715      0.763
+                     2.0                      5            2.023     1.429      0.437
+                     4.0                      0            2.023     2.858      0.167
+                     8.0                      0            2.023     5.716      0.057
+                     16.0                     0            2.023    11.433      0.050
+
+Distance to the whole class X_c (consistent completion, rows with at least two prototypes; medians over seeds, classes and eps_scale). K = kept set, P = prototypes, R = random subsets and F = farthest-point net of X_c, both of the size of P; degree 2 only for classes with beta2 > 0:
+                  kept share  dB1_KX  dB1_PX  dB1_RX  dB1_FX  dB2_KX  dB2_PX  dB2_RX  dB2_FX
+gen                                                                                         
+two_circles            1.000   0.000   0.075   0.411   0.075     NaN     NaN     NaN     NaN
+circle_vs_disk         0.936   0.057   0.094   0.085   0.063     NaN     NaN     NaN     NaN
+two_moons              0.993   0.001   0.032   0.033   0.033     NaN     NaN     NaN     NaN
+crossing_circles       0.981   0.019   0.128   0.259   0.077     NaN     NaN     NaN     NaN
+torus_blob             1.000   0.000   0.074   0.077   0.074   0.000   0.315   0.459   0.315
+circles_r10            1.000   0.000   0.472   0.656   0.472     NaN     NaN     NaN     NaN
+gauss_d2               0.959   0.070   0.118   0.126   0.119     NaN     NaN     NaN     NaN
+gauss_d5               0.966   0.073   0.230   0.219   0.297     NaN     NaN     NaN     NaN
+gauss_d10              0.971   0.079   0.291   0.281   0.330     NaN     NaN     NaN     NaN
+gauss_d20              0.979   0.090   0.376   0.347   0.432     NaN     NaN     NaN     NaN
+sphere_blob            0.980   0.003   0.075   0.067   0.074   0.221   0.357   0.400   0.180
+two_spheres            1.000   0.000   0.169   0.195   0.166   0.000   0.284   0.445   0.284
+two_circles_D10        1.000   0.000   0.226   0.681   0.226     NaN     NaN     NaN     NaN
+two_circles_D50        1.000   0.000   0.538   0.671   0.538     NaN     NaN     NaN     NaN
+two_circles_D100       1.000   0.000   0.632   0.636   0.632     NaN     NaN     NaN     NaN
+sphere_blob_D10        0.980   0.028   0.061   0.051   0.060   0.191   0.401   0.415   0.263
+sphere_blob_D50        0.980   0.006   0.077   0.062   0.077   0.000   0.446   0.454   0.290
+sphere_blob_D100       0.983   0.004   0.067   0.056   0.056   0.000   0.418   0.425   0.339
+
+P at least as close as random in degree 1: 0.70 of rows; as close as the farthest-point net: 0.72.
+
+== Noise and imbalance ablations (eps_scale = 1 and 4) ==
+Certificate holds in 3520 of 3520 rows.
+
+-- noise sweep (columns: label-noise rate; means over generators, seeds and classes) --
+Clean-test balanced accuracy (%)
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)    96.4  96.1  94.1  85.2  75.2
+    completion=gain    96.4  96.1  94.1  85.2  75.1
+    completion=None    96.4  96.1  94.1  85.2  75.0
+    class_weight=None  96.4  96.0  94.4  85.2  75.2
+    prune=False        96.4  96.1  94.1  85.2  75.2
+4.0 PENS (defaults)    95.9  95.5  92.7  83.0  72.4
+    completion=gain    95.0  94.8  91.7  81.9  72.9
+    completion=None    94.4  93.6  87.6  71.0  63.4
+    class_weight=None  95.9  95.4  93.0  83.0  72.4
+    prune=False        95.9  95.5  92.7  83.2  72.9
+
+Retention (%)
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)    59.9  57.5  55.6  53.2  51.5
+    completion=gain    59.9  57.5  55.5  52.9  50.9
+    completion=None    59.9  57.5  55.5  52.9  50.8
+    class_weight=None  59.9  57.4  55.6  53.2  51.5
+    prune=False        59.9  57.5  55.6  53.2  51.5
+4.0 PENS (defaults)    12.3  12.6  14.4  22.3  27.7
+    completion=gain    11.1  11.3  11.7  14.2  15.0
+    completion=None    10.7  10.6  10.6  11.4  12.0
+    class_weight=None  12.3  12.6  14.2  22.2  27.6
+    prune=False        12.3  12.7  14.5  22.8  28.9
+
+Share of mislabeled points removed by the edit (%)
+noise                  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)    90.9  81.2  55.5  43.6
+    completion=gain    90.9  81.2  55.5  43.6
+    completion=None    90.9  81.2  55.5  43.6
+    class_weight=None  90.8  82.4  55.7  43.7
+    prune=False        90.9  81.2  55.5  43.6
+4.0 PENS (defaults)    90.9  81.2  55.5  43.6
+    completion=gain    90.9  81.2  55.5  43.6
+    completion=None    90.9  81.2  55.5  43.6
+    class_weight=None  90.8  82.4  55.7  43.7
+    prune=False        90.9  81.2  55.5  43.6
+
+Share of correctly labeled points removed by the edit (%)
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)     2.5   2.0   2.2   5.5  10.1
+    completion=gain     2.5   2.0   2.2   5.5  10.1
+    completion=None     2.5   2.0   2.2   5.5  10.1
+    class_weight=None   2.5   2.3   2.2   5.5  10.1
+    prune=False         2.5   2.0   2.2   5.5  10.1
+4.0 PENS (defaults)     2.5   2.0   2.2   5.5  10.1
+    completion=gain     2.5   2.0   2.2   5.5  10.1
+    completion=None     2.5   2.0   2.2   5.5  10.1
+    class_weight=None   2.5   2.3   2.2   5.5  10.1
+    prune=False         2.5   2.0   2.2   5.5  10.1
+
+d_B in degree 1 from the prototypes to the clean class (classes with beta1 = 1)
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)   0.048 0.060 0.198 0.711 0.757
+    completion=gain   0.048 0.060 0.198 0.711 0.757
+    completion=None   0.048 0.060 0.198 0.711 0.757
+    class_weight=None 0.048 0.060 0.222 0.711 0.757
+    prune=False       0.048 0.060 0.198 0.711 0.757
+4.0 PENS (defaults)   0.163 0.190 0.291 0.760 0.791
+    completion=gain   0.173 0.204 0.296 0.744 0.800
+    completion=None   0.184 0.206 0.297 0.748 0.812
+    class_weight=None 0.163 0.190 0.325 0.758 0.791
+    prune=False       0.163 0.190 0.291 0.760 0.789
+
+d_B in degree 2 from the prototypes to the clean sphere
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)   0.199 0.110 0.352 0.473 0.473
+    completion=gain   0.199 0.110 0.352 0.473 0.473
+    completion=None   0.199 0.110 0.352 0.473 0.473
+    class_weight=None 0.199 0.166 0.352 0.473 0.473
+    prune=False       0.199 0.110 0.352 0.473 0.473
+4.0 PENS (defaults)   0.389 0.332 0.419 0.467 0.473
+    completion=gain   0.415 0.342 0.365 0.461 0.464
+    completion=None   0.415 0.342 0.365 0.452 0.464
+    class_weight=None 0.389 0.335 0.419 0.467 0.473
+    prune=False       0.389 0.332 0.419 0.467 0.473
+
+Share of loop classes with the loop certified (cert_h1 >= 1) (%)
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)   100.0 100.0 100.0 100.0 100.0
+    completion=gain   100.0 100.0 100.0 100.0 100.0
+    completion=None   100.0 100.0 100.0 100.0 100.0
+    class_weight=None 100.0 100.0 100.0 100.0 100.0
+    prune=False       100.0 100.0 100.0 100.0 100.0
+4.0 PENS (defaults)   100.0 100.0  86.7  73.3  66.7
+    completion=gain   100.0 100.0  86.7  73.3  66.7
+    completion=None   100.0 100.0  86.7  73.3  66.7
+    class_weight=None 100.0 100.0  86.7  73.3  66.7
+    prune=False       100.0 100.0  86.7  73.3  66.7
+
+Share of sphere classes with the void certified (cert_h2 >= 1) (%)
+noise                  0.00  0.05  0.10  0.20  0.30
+1.0 PENS (defaults)   100.0 100.0  60.0   0.0   0.0
+    completion=gain   100.0 100.0  60.0   0.0   0.0
+    completion=None   100.0 100.0  60.0   0.0   0.0
+    class_weight=None 100.0 100.0  60.0   0.0   0.0
+    prune=False       100.0 100.0  60.0   0.0   0.0
+4.0 PENS (defaults)     0.0   0.0   0.0   0.0   0.0
+    completion=gain     0.0   0.0   0.0   0.0   0.0
+    completion=None     0.0   0.0   0.0   0.0   0.0
+    class_weight=None   0.0   0.0   0.0   0.0   0.0
+    prune=False         0.0   0.0   0.0   0.0   0.0
+
+Clean-test balanced accuracy (%) by generator, PENS defaults:
+noise                     0.00  0.05  0.10  0.20  0.30
+eps_scale gen                                         
+1.0       circle_vs_disk  89.1  88.2  85.8  79.6  71.0
+          sphere_blob     97.9  97.8  95.6  85.5  74.4
+          two_circles    100.0 100.0  99.3  90.0  78.0
+          two_moons       98.6  98.4  96.0  85.7  77.3
+4.0       circle_vs_disk  88.0  87.1  83.7  77.0  67.7
+          sphere_blob     97.0  96.8  92.8  82.6  70.5
+          two_circles    100.0 100.0  98.9  88.6  75.8
+          two_moons       98.5  98.2  95.3  83.7  75.5
+
+-- imbalance sweep (columns: imbalance ratio; means over generators, seeds and classes) --
+Clean-test balanced accuracy (%)
+ir                      1    2    5    10   20
+1.0 PENS (defaults)   96.4 96.4 95.6 94.0 90.9
+    completion=gain   96.4 96.4 95.6 94.0 90.9
+    completion=None   96.4 96.4 95.6 94.0 90.9
+    class_weight=None 96.4 96.1 89.8 64.2 65.9
+    prune=False       96.4 96.4 95.6 94.0 90.9
+4.0 PENS (defaults)   95.9 95.8 94.7 92.9 89.7
+    completion=gain   95.0 95.1 93.8 92.1 89.7
+    completion=None   94.4 94.4 93.4 91.6 89.7
+    class_weight=None 95.9 95.6 89.4 65.1 66.8
+    prune=False       95.9 95.8 94.6 92.9 89.7
+
+Retention (%)
+ir                      1    2    5    10   20
+1.0 PENS (defaults)   59.9 60.2 60.4 60.7 61.2
+    completion=gain   59.9 60.2 60.4 60.7 61.2
+    completion=None   59.9 60.2 60.4 60.7 61.2
+    class_weight=None 59.9 60.4 58.9 56.0 58.7
+    prune=False       59.9 60.2 60.4 60.7 61.2
+4.0 PENS (defaults)   12.3 13.3 14.2 14.3 13.1
+    completion=gain   11.1 12.1 13.4 13.6 12.8
+    completion=None   10.7 11.7 13.1 13.3 12.7
+    class_weight=None 12.3 13.0 12.8 10.4 10.8
+    prune=False       12.3 13.3 14.3 14.3 13.1
+
+Share of correctly labeled points removed by the edit (%)
+ir                     1   2    5    10   20
+1.0 PENS (defaults)   2.5 2.1  2.1  2.6  1.9
+    completion=gain   2.5 2.1  2.1  2.6  1.9
+    completion=None   2.5 2.1  2.1  2.6  1.9
+    class_weight=None 2.5 2.4 12.9 50.0 50.0
+    prune=False       2.5 2.1  2.1  2.6  1.9
+4.0 PENS (defaults)   2.5 2.1  2.1  2.6  1.9
+    completion=gain   2.5 2.1  2.1  2.6  1.9
+    completion=None   2.5 2.1  2.1  2.6  1.9
+    class_weight=None 2.5 2.4 12.9 50.0 50.0
+    prune=False       2.5 2.1  2.1  2.6  1.9
+
+Minority class: share of its points removed by the edit (%)
+ir                     1   2    5     10    20
+1.0 PENS (defaults)   2.3 1.8  2.5   4.1   3.2
+    completion=gain   2.3 1.8  2.5   4.1   3.2
+    completion=None   2.3 1.8  2.5   4.1   3.2
+    class_weight=None 2.3 3.6 25.7 100.0 100.0
+    prune=False       2.3 1.8  2.5   4.1   3.2
+4.0 PENS (defaults)   2.3 1.8  2.5   4.1   3.2
+    completion=gain   2.3 1.8  2.5   4.1   3.2
+    completion=None   2.3 1.8  2.5   4.1   3.2
+    class_weight=None 2.3 3.6 25.7 100.0 100.0
+    prune=False       2.3 1.8  2.5   4.1   3.2
+
+d_B in degree 1 from the prototypes to the clean class (classes with beta1 = 1)
+ir                       1     2     5     10    20
+1.0 PENS (defaults)   0.048 0.056 0.045 0.062 0.022
+    completion=gain   0.048 0.056 0.045 0.062 0.022
+    completion=None   0.048 0.056 0.045 0.062 0.022
+    class_weight=None 0.048 0.044 0.023 0.020 0.020
+    prune=False       0.048 0.056 0.045 0.062 0.022
+4.0 PENS (defaults)   0.163 0.165 0.136 0.169 0.135
+    completion=gain   0.173 0.180 0.141 0.170 0.136
+    completion=None   0.184 0.180 0.146 0.171 0.136
+    class_weight=None 0.163 0.163 0.137 0.161 0.161
+    prune=False       0.163 0.165 0.136 0.169 0.135
+
+d_B in degree 2 from the prototypes to the clean sphere
+ir                       1     2     5     10    20
+1.0 PENS (defaults)   0.199 0.085 0.025 0.025 0.025
+    completion=gain   0.199 0.085 0.025 0.025 0.025
+    completion=None   0.199 0.085 0.025 0.025 0.025
+    class_weight=None 0.199 0.021 0.025 0.025 0.025
+    prune=False       0.199 0.085 0.025 0.025 0.025
+4.0 PENS (defaults)   0.389 0.408 0.447 0.471 0.471
+    completion=gain   0.415 0.413 0.471 0.471 0.471
+    completion=None   0.415 0.414 0.471 0.471 0.471
+    class_weight=None 0.389 0.406 0.447 0.471 0.471
+    prune=False       0.389 0.408 0.447 0.471 0.471
+
+Share of loop classes with the loop certified (cert_h1 >= 1) (%)
+ir                       1     2     5     10    20
+1.0 PENS (defaults)   100.0 100.0 100.0 100.0 100.0
+    completion=gain   100.0 100.0 100.0 100.0 100.0
+    completion=None   100.0 100.0 100.0 100.0 100.0
+    class_weight=None 100.0 100.0 100.0  66.7  66.7
+    prune=False       100.0 100.0 100.0 100.0 100.0
+4.0 PENS (defaults)   100.0 100.0 100.0 100.0 100.0
+    completion=gain   100.0 100.0 100.0 100.0 100.0
+    completion=None   100.0 100.0 100.0 100.0 100.0
+    class_weight=None 100.0 100.0 100.0  66.7  66.7
+    prune=False       100.0 100.0 100.0 100.0 100.0
+
+Share of sphere classes with the void certified (cert_h2 >= 1) (%)
+ir                       1     2     5     10    20
+1.0 PENS (defaults)   100.0 100.0 100.0 100.0 100.0
+    completion=gain   100.0 100.0 100.0 100.0 100.0
+    completion=None   100.0 100.0 100.0 100.0 100.0
+    class_weight=None 100.0 100.0 100.0 100.0 100.0
+    prune=False       100.0 100.0 100.0 100.0 100.0
+4.0 PENS (defaults)     0.0   0.0   0.0   0.0   0.0
+    completion=gain     0.0   0.0   0.0   0.0   0.0
+    completion=None     0.0   0.0   0.0   0.0   0.0
+    class_weight=None   0.0   0.0   0.0   0.0   0.0
+    prune=False         0.0   0.0   0.0   0.0   0.0
+
